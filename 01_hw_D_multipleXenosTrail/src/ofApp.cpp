@@ -14,14 +14,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     for (int i=0; i<NUMCIRCLE; i++) {
-        // circle[0] is the Leader
-        if (i == 0) {
-            crcle[i].update(ofGetMouseX(), ofGetMouseY());
-        
-        //for the rest of the followers, it's [i-1]
-        } else {
-            crcle[i].update(crcle[i-1].pos.x, crcle[i-1].pos.y);
-        }
+        crcle[i].update(mouseX, mouseY);
     }
 }
 
@@ -59,7 +52,7 @@ void ofApp::mousePressed(int x, int y, int button){
 
 //--------------------------------------------------------------
 void ofApp::mouseReleased(int x, int y, int button){
-  
+    
 }
 
 //--------------------------------------------------------------

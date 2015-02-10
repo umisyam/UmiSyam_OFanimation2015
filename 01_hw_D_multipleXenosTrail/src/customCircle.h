@@ -1,8 +1,8 @@
 //
 //  customCircle.h
-//  01_hw_C_multipleXenos
+//  01_hw_D_multipleXenosTrail
 //
-//  Created by Umi Syam on 2/6/15.
+//  Created by Umi Syam on 2/10/15.
 //
 //
 
@@ -15,6 +15,7 @@ public:
     void update(int _mouseX, int _mouseY);
     void draw();
     
+private:
     ofVec2f pos, dir, finalPos;
     float speed;
     ofColor color;

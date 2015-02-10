@@ -1,8 +1,8 @@
 //
 //  customCircle.cpp
-//  01_hw_C_multipleXenos
+//  01_hw_D_multipleXenosTrail
 //
-//  Created by Umi Syam on 2/6/15.
+//  Created by Umi Syam on 2/10/15.
 //
 //
 
