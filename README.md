@@ -9,6 +9,7 @@ A - Random Drawing Tool
 
 B - Noise Landscape
 
+![02_hw_B_NoiseLandscape](images/02_hw_B_NoiseLandscape.gif)
 
 C - Gaussian Population: 1000 objects from class "Punk".
 
