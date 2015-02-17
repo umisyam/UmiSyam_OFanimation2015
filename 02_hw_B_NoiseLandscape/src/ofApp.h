@@ -19,6 +19,7 @@ public:
     void dragEvent(ofDragInfo dragInfo);
     void gotMessage(ofMessage msg);
     
-    ofVec2f pos;
-    float yOffset;
+    int w, h;
+    ofImage img;
+
 };

@@ -1,27 +1,43 @@
 #include "ofApp.h"
 
+
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofBackground(0);
-    yOffset = 10000.0;
-    
+    ofSetFrameRate(60);
+    ofBackground(255);
+    w = 600;
+    h = 600;
+    img.allocate(w,h,OF_IMAGE_GRAYSCALE);
 }
 
 //--------------------------------------------------------------
 void ofApp::update(){
-    //ofGetElapsedTimef gets the current time since we run the program
-    float noiseX = ofNoise(ofGetElapsedTimef());
-    float noiseY = ofNoise(ofGetElapsedTimef() + yOffset);
+    for (int y = 0; y < w; y++) {
+        for (int x = 0; x < h; x++) {
+            
+            float a = x * .009;
+            float b = y * .008;
+            float c = ofGetFrameNum() / 50.0;
+            
+            float noise = ofNoise(a,b,c) * 255;
+            float color;
+            
+            if (noise > 200) {
+                color = ofMap(noise, 200, 255, 0, 255);
+            } else {
+                color = ofMap(noise,0,200,100,255);
+            }
+            
+            img.getPixels()[y * w + x] = color;
+        }
+    }
     
-    pos.x = ofMap(noiseX, 0,1,0,ofGetWidth());
-    pos.y = ofMap(noiseY, 0,1,0,ofGetHeight());
+    img.reloadTexture();
 }
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    ofCircle(pos, 20);
-    
-    //you're on your way to win the Oscar!! yay perlin noise
+    img.draw(0,0);
 }
 
 //--------------------------------------------------------------
