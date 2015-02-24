@@ -9,7 +9,8 @@
 #include "Arrow.h"
 
 void Arrow::setup(float _x, float _y, int _i, ofColor _color) {
-    pos.set(_x, _y);
+//    pos.set(_x, _y);
+    set(_x, _y);
     size.set(30, 30);
     color = _color;
 }
@@ -19,7 +20,8 @@ void Arrow::update(ofVec2f _newPos) {
 //    newPos.set(_x, _y);
 //
     newPos = _newPos;
-    pos = pos * 0.95 + newPos * 0.05;
+    pos = pos * 0.93 + newPos * 0.07;
+//    pos = pos * 0.95 + _newPos * 0.05;
     
     ofVec2f diff; //the distance difference between the mouse and the arrow
     diff = newPos - pos;
@@ -36,7 +38,6 @@ void Arrow::draw() {
     float y2 = 10;
     float x3 = 30;
     float y3 = 0;
-    
     
     ofTranslate(pos);
     ofRotate(rot);

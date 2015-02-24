@@ -2,16 +2,17 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofBackground(ofColor::salmon);
+    ofBackground(0);
 //    ofSetBackgroundAuto(false);
 //    myArrow.setup();
+
     ofSetVerticalSync(true);
     for(int i = 0; i < NUMARROW; i++){
         ofVec2f initPos;
-        //        initPos.set(ofRandom(ofGetWidth()), ofRandom(ofGetHeight()));
-        initPos.set(ofGetWidth()/2, ofGetHeight()/2);
+//        initPos.set(ofGetWidth()/4, ofGetHeight()/4);
+        initPos.set(10,10);
         ofColor color;
-        color.setHsb(200 + (float)i/NUMARROW * 50, 255, 255);
+        color.setHsb(70 + (float)i/NUMARROW * 100, 255, 255);
         myArrow[i].setup(initPos.x, initPos.y, i, color);
     }
 
@@ -21,7 +22,7 @@ void ofApp::setup(){
 void ofApp::update(){
 //    myArrow.update(ofGetMouseX(), ofGetMouseY());
     ofVec2f mouse;
-    mouse.set(mouseX, mouseY);
+    mouse.set(ofGetMouseX(), ofGetMouseY());
     
     for(int i = 0; i < NUMARROW; i++){
         if(i > 0){
@@ -30,7 +31,6 @@ void ofApp::update(){
             myArrow[i].update(mouse);
         }
     }
-    //    atan is short for arc tangent
 }
 
 //--------------------------------------------------------------

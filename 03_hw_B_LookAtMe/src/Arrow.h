@@ -20,4 +20,5 @@ public:
     float rot;
     ofVec2f size;
     ofColor color;
+    
 };

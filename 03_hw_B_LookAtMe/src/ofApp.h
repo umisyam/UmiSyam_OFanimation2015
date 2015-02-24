@@ -2,7 +2,7 @@
 
 #include "ofMain.h"
 #include "Arrow.h"
-#define NUMARROW 20
+#define NUMARROW 10
 
 class ofApp : public ofBaseApp{
     
