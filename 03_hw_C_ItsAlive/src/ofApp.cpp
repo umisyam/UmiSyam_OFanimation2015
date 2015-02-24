@@ -12,7 +12,7 @@ void ofApp::setup(){
 //--------------------------------------------------------------
 void ofApp::update(){
     
-    startAngle += 0.0005;
+    startAngle += .1f;
     angle = startAngle;
 
 }
@@ -20,8 +20,8 @@ void ofApp::update(){
 //--------------------------------------------------------------
 void ofApp::draw(){
     ofColor color1, color2;
-    color1.set(0, 100, 240);
-    color2.set(0, 20, 180);
+    color1.set(0, 100, 200);
+    color2.set(0, 20, 100);
     ofBackgroundGradient(color1, color2, OF_GRADIENT_LINEAR);
     
     //making the tornado
