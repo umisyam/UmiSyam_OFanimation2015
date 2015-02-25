@@ -14,7 +14,7 @@ void ofApp::setup(){
 void ofApp::update(){
     
     startAngle += 0.005;
-    angle = startAngle;
+    angle = startAngle; 
     
     if (angle > 10) {
         startAngle = 0;
