@@ -3,7 +3,7 @@
 //  w06_midterm
 //
 //  Created by Umi Syam on 3/15/15.
-//  Addons: ofxUI
+//  Addons: ofxUI, ofxXmlSettings
 //
 
 #include "ofApp.h"
@@ -39,8 +39,13 @@ void ofApp::setup(){
     
     /*-----------------GUI Setup here----------------------------*/
     gui = new ofxUISuperCanvas("FUNKY PARTICLE");
+    
     gui->addTextArea("TEXT AREA", "f: Toggle Fullscreen", OFX_UI_FONT_SMALL);
     gui->addTextArea("TEXT AREA", "g: Hide/show the GUI panel.", OFX_UI_FONT_SMALL);
+    gui->addTextArea("TEXT AREA", "1-9: Load Preset", OFX_UI_FONT_SMALL);
+    gui->addTextArea("TEXT AREA", "s: Save Preset", OFX_UI_FONT_SMALL);
+    gui->addTextArea("TEXT AREA", "<space>: Take Screenshot", OFX_UI_FONT_SMALL);
+    
     gui->addSpacer();
     gui->addLabel("BACKGROUND", OFX_UI_FONT_MEDIUM);
     gui->addSpacer();
