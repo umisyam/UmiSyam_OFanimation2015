@@ -41,7 +41,13 @@ void Particle::draw() {
     ofNoFill();
     ofSetColor(color);
     ofSetLineWidth(15);
+    
     ofBeginShape();
+//    for (int x = 0; x<tail.size(); x++) {
+//        for (int y=0; y<tail.size(); y++) {
+//            ofVertex(x, y);
+//        }
+//    }
     for(ofPoint firetail : tail){
         ofVertex(firetail);
     }
