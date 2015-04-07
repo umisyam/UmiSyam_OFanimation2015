@@ -72,20 +72,29 @@ ofVec2f flowField::getForceAt(float x, float y) {
 }
 
 
-void flowField::draw() {
-    ofSetColor(255,0,0);
-    for (int y = 0; y < internalHeight; y++) {
-        for (int x = 0; x < internalWidth; x++) {
-            int index = (y * internalWidth) + x;
-            
-            float px = x * resolution;
-            float py = y * resolution;
+void flowField::draw(ofVideoGrabber &vid) {
 
-            float px2 = px + field[index].x * 5;
-            float py2 = py + field[index].y * 5;
+    for (int y = 0; y < height; y+=resolution) {
+        for (int x = 0; x < width; x+=resolution) {
+            int i = (y * width + x) * 3;
             
-            ofLine (px, py, px2, py2);
-            ofCircle(px, py, 1);
+            //get pixels from vidgrabber
+            int r = vid.getPixels()[i+0];
+            int g = vid.getPixels()[i+2];
+            int b = vid.getPixels()[i+4];
+            
+            float brightness = (r+g+b) / 255.0 / 2;
+            ofSetColor(ofColor::fromHsb(brightness * 255,255,255));
+            
+            //sine and cosine of the video's brightness
+            float cosB = cos(brightness*TWO_PI);
+            float sinB = sin(brightness*TWO_PI);
+            
+            //draw rotated line based on brightness
+            ofLine(x-5*cosB, y-5*sinB, x+5*cosB, y+5*sinB);
+            ofCircle(x*sinB, y*cosB, 2);
+            
+
         }
     }
 }

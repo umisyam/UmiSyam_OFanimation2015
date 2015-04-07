@@ -15,7 +15,7 @@ public:
     
     void setup(float w, float h, float res);
 //    void update();
-    void draw();
+    void draw(ofVideoGrabber &vid);
     
     void setRandom(float scale);
     void setNoise();

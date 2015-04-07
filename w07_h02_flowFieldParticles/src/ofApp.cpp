@@ -6,7 +6,7 @@ void ofApp::setup(){
     ofSetVerticalSync(true);
     ofSetFrameRate(60);
 //    ofSetBackgroundAuto(false);
-    ofSetFullscreen(true);
+//    ofSetFullscreen(true);
     
     isDrawFF = true;
     
@@ -29,7 +29,7 @@ void ofApp::update(){
         ofVec2f frc;
         frc = flowField.getForceAt(particles[i].pos.x, particles[i].pos.y);
         particles[i].applyForce(frc);
-        particles[i].applyDampingForce(0.035);
+        particles[i].applyDampingForce(0.040);
         particles[i].update();
     }
     
