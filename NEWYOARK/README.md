@@ -4,3 +4,5 @@
 [See the working video footage here.](https://vimeo.com/127382769) 
 
 To use this you will need to install openFrameworks for iOS and already have an Apple Developer license because this does not run on the simulator in Xcode.
+
+![Sample screenshots of NEW YOARK](https://raw.githubusercontent.com/umisyam/UmiSyam_OFanimation2015/master/NEWYOARK/img/sampleCapture.jpg)
